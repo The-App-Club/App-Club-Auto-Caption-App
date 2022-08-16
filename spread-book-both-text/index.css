@@ -1,0 +1,176 @@
+/* https://www.youtube.com/watch?v=A5fdu8HZKic */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-25%) translateY(-50%);
+  color: #f1f1f1;
+  font-family: 'Noto Sans JP', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  position: relative;
+  top: -100px;
+  /* display: none; */
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.book {
+  display: flex;
+}
+
+.flip-book {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  perspective: 1500px;
+}
+
+.flip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: zIndex 2.5s, transform 3.4s;
+  color: #000;
+}
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 1px #242424, 0px 0px 1px 1px #242424 inset;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background-color: #fff;
+}
+.back-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #000;
+}
+div#p0 .next-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.next-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+#p0 {
+  z-index: 10;
+}
+#p1 {
+  z-index: 9;
+}
+#p2 {
+  z-index: 8;
+}
+#p3 {
+  z-index: 7;
+}
+#p4 {
+  z-index: 6;
+}
+#p5 {
+  z-index: 5;
+}
+
+#c0:checked ~ .flip-book #p0 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+
+#c1:checked ~ .flip-book #p1 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+
+#c2:checked ~ .flip-book #p2 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+#c3:checked ~ .flip-book #p3 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+#c4:checked ~ .flip-book #p4 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+#c5:checked ~ .flip-book #p5 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+
+.article {
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  padding: 20px;
+}
+.artist {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+}
+.title {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+}
+.separator {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #24242446;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
